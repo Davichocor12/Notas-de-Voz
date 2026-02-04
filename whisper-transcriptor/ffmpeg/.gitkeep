@@ -1,0 +1,7 @@
+# Esta carpeta debe contener los ejecutables de FFmpeg:
+# - ffmpeg.exe
+# - ffprobe.exe
+# - ffplay.exe
+#
+# Descárgalos de: https://github.com/BtbN/FFmpeg-Builds/releases
+# O ejecuta: descargar_ffmpeg.bat

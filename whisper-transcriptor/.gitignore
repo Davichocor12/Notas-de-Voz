@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+
+# PyInstaller
+build/
+dist/
+*.spec.bak
+*.manifest
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# FFmpeg (binarios, no incluir en git)
+ffmpeg/*.exe
+ffmpeg/*.dll
+
+# Archivos de descarga temporales
+*.zip
+*.tar.gz
+
+# Modelos de Whisper (se descargan automáticamente)
+*.pt
+*.bin
+
+# Archivos de transcripción generados
+*_transcripcion.txt
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
