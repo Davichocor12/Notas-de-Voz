@@ -1,0 +1,77 @@
+================================================================================
+   CÓMO CREAR EL EJECUTABLE - GUÍA SIMPLE PASO A PASO
+================================================================================
+
+REQUISITOS PREVIOS (solo necesitas hacer esto una vez):
+
+1. Tener Python instalado
+   - Si no lo tienes: https://python.org/downloads
+   - IMPORTANTE: Durante la instalación marca "Add Python to PATH"
+
+2. Descargar FFmpeg
+   - Ve a: https://github.com/BtbN/FFmpeg-Builds/releases
+   - Descarga: ffmpeg-master-latest-win64-gpl.zip
+   - Extrae el ZIP
+   - Dentro hay una carpeta "bin" con ffmpeg.exe, ffprobe.exe, ffplay.exe
+   - Copia esos 3 archivos .exe a la carpeta "ffmpeg" de este proyecto
+
+================================================================================
+
+PASOS PARA CREAR EL EJECUTABLE:
+
+PASO 1: Abre CMD (Símbolo del sistema) en la carpeta del proyecto
+        - Ve a la carpeta whisper-transcriptor
+        - En la barra de direcciones escribe: cmd
+        - Presiona Enter
+
+PASO 2: Copia y pega estos comandos UNO POR UNO:
+
+        pip install openai-whisper pyinstaller torch
+
+        (Espera a que termine, puede tardar varios minutos)
+
+PASO 3: Crea el ejecutable con este comando:
+
+        pyinstaller --onedir --windowed --name=WhisperTranscriptor --collect-all=whisper --collect-all=tiktoken --hidden-import=tiktoken_ext.openai_public transcriptor_simple.py
+
+        (Esto tarda varios minutos, espera a que termine)
+
+PASO 4: Cuando termine, ve a la carpeta:
+        dist\WhisperTranscriptor\
+
+PASO 5: Copia la carpeta "ffmpeg" (con los .exe) dentro de dist\WhisperTranscriptor\
+
+================================================================================
+
+PARA ENVIAR A OTRA PERSONA:
+
+1. Comprime TODA la carpeta "dist\WhisperTranscriptor" en un ZIP
+2. Envía ese ZIP
+3. La otra persona solo tiene que:
+   - Extraer el ZIP
+   - Ejecutar WhisperTranscriptor.exe
+
+================================================================================
+
+ESTRUCTURA FINAL QUE DEBES ENVIAR:
+
+WhisperTranscriptor/
+    ├── WhisperTranscriptor.exe    <-- El programa
+    ├── ffmpeg/
+    │   ├── ffmpeg.exe             <-- Necesario
+    │   ├── ffprobe.exe            <-- Necesario
+    │   └── ffplay.exe             <-- Opcional
+    └── (otros archivos que genera PyInstaller)
+
+================================================================================
+
+PROBLEMAS COMUNES:
+
+- "pip no reconocido": Python no está en el PATH, reinstala Python
+  marcando "Add Python to PATH"
+
+- "Error de memoria": Tu PC necesita al menos 8GB de RAM
+
+- "FFmpeg no encontrado": Asegúrate de copiar ffmpeg.exe a la carpeta ffmpeg/
+
+================================================================================

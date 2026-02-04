@@ -1,0 +1,16 @@
+# Dependencias para Whisper Transcriptor
+# Instalar con: pip install -r requirements.txt
+
+# OpenAI Whisper - Motor de transcripción
+openai-whisper>=20231117
+
+# PyInstaller - Para crear el ejecutable
+pyinstaller>=6.0.0
+
+# Dependencias adicionales de Whisper
+torch>=2.0.0
+torchaudio>=2.0.0
+numpy>=1.21.0
+
+# FFmpeg Python wrapper (opcional, Whisper usa FFmpeg directamente)
+ffmpeg-python>=0.2.0
